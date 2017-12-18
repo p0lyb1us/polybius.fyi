@@ -67,7 +67,7 @@
       <div class="slides">
 
         <section data-transition="zoom-in">
-          <h2>Autodifesa digitale #1</h2>
+          <h2>Autodifesa digitale #2</h2>
           <h3><br/></h3>
           <img class="logos" src="dj.png"/>
           <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -179,6 +179,7 @@
                           <li>Social engineering: manipolare psicologicamente le persone, inducendole a fidarsi di te, al fine di farle divulgare informazioni confidenziali (phishing).</li>
                           <li>Hacking Team</li>
                           <li>Intercettazioni: la risposta è fare traffico crittato</li>
+
                           <li>Profilazione: ciò che una volta veniva svolto tramite onerosi sondaggi, adesso è fatto gratuitamente dagli utenti di social network e motori di ricerca (google). I servizi online sono gratis a causa di questo</li>
                           <li>Profilazione#2: caso di attività monitorate da uso di Whatsapp ma pure di Messenger </li>
                           <li>Vendita di informazioni: tutto ciò che inseriamo all’interno dei social network, ad esempio, appartiene a loro (ed è accessibile alla polizia). Quando cancelliamo qualcosa da FB, il contenuto viene solo oscurato, ma mai davvero cancellato</li>
@@ -188,6 +189,8 @@
         </section>
         
         <section data-transition="convex">
+  <p>$c = E_k(m)$</p>
+  <p>$m = D_k(c)$</p>
                 <h2>Riferimenti</h2>
                 <ul class="">
                   <li class="halfsize">Autistici/Inventati https://www.autistici.org/</li>
@@ -217,7 +220,15 @@
 
         </section>
 
+<section>
+					<h3>Maxwell&#8217;s Equations</h3>
 
+					\[  \begin{aligned}
+					\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &amp; = \frac{4\pi}{c}\vec{\mathbf{j}} \\   \nabla \cdot \vec{\mathbf{E}} &amp; = 4 \pi \rho \\
+					\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} &amp; = \vec{\mathbf{0}} \\
+					\nabla \cdot \vec{\mathbf{B}} &amp; = 0 \end{aligned}
+					\]
+				</section>
       </div>
 
     </div>
@@ -236,12 +247,17 @@
         //naturalSwipe   : false,    // Invert swipe gestures
         //pointerOpacity : 0.5,      // Set pointer opacity to 0.5
         //pointerColor   : '#d80000', // Red pointer
+        math: {
+      		mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+		      config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+	      },
 
         // Optional libraries used to extend on reveal.js
         dependencies: [
           { src: '../../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
           { src: '../../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); }},
         // Syntax highlight for <code> elements
+            { src: '../../plugin/math/math.js', async: true },
 
 					{ src: '../../plugin/notes/notes.js', async: true },
         { src: '../../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
