@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>reveal.js - Slide Transitions</title>
+
+    <link rel="stylesheet" href="../../css/reveal.css">
+    <link rel="stylesheet" href="../../css/theme/league.css" id="theme">
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+    <style type="text/css" media="screen">
+      .slides section.has-dark-background,
+      .slides section.has-dark-background h3 {
+        color: #fff;
+      }
+      .slides section.has-light-background,
+      .slides section.has-light-background h3 {
+        color: #222;
+      }
+
+      .greenthumb{
+          color: #0F6;
+       }
+       
+       .yellow{
+          color: #FF0;
+       }
+       .red{
+          color: #F22;
+       }
+       .left{
+          text-align: left;
+       }
+        .pedice{
+          vertical-align: super;
+       }
+   
+       .halfsize{
+          font-size: 0.5em !important;
+       }
+       .largo{
+          letter-spacing:0.2em
+        }
+
+    </style>
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <div class="slides">
+
+        <section data-transition="zoom-in">
+          <h1>Acquabooks</h1>
+          <h2>Semilavorato digitale per librai in <i class="greenthumb">erba</i> </h2>
+          <h3><br/></h3>
+          <h5>Una produzione <i class="red">CS Django</i></h5>
+          <h5>Scenggiatura e regia di <i class="yellow">Mario Incandenza</i></h5>
+        </section>
+
+        <section data-transition="zoom-in">
+                <section>
+          <h2>Esigenze</h2>
+          <ul>
+             <li class="fragment fade-in">Tenere traccia del venduto <p  class="halfsize">(prima: presitoriche barre verticali su carta)</p></li>
+            <li class="fragment fade-in">Produrre documenti per rendicontazione <p class="halfsize">(prima: decodifica e del dato su carta e digitazlizzaione dello stesso)</p></li>
+            <li class="fragment fade-in">Mettere in condizione chiunque di "gestire una transazione" <p class="halfsize">(anche se questo chiunque non è <i>propriamente</i> in condizione di gentirne una )</p></li>
+          </ul>
+          </section>
+          <section>
+           Parte tecnica che vi sriparmio!
+
+          </section>
+        </section>
+
+        <section data-transition="zoom-in">
+          <h2>Linee guida</h2>
+          
+          <p>Adesione bilaterale al paradigma KISS</p>
+          <p>UI da terminale: "<i>Estetica è saturazione di mercati</i>"</p>
+          <p>Utilizzo di un lettore di codici a barre</p>
+
+          
+        </section>
+
+        <section data-transition="zoom-in">
+          <h2>Nasce Acquabooks</h2>
+          <p>in Java quindi Write Once Run Anywhere</p>
+
+            <video  id="rene_vidplayer" data-autoplay data-src="omg.mp4" ></video>
+        </section>
+
+        <section data-transition="convex">
+                <h2>Modalità vendita</h2>
+                <p><pre><code>acquabooks-0.1.5$ ./bin/acquabooks -s
+                </code></pre></p>
+                <ul class="fragment fade-in">
+                        <li>Modalità ascolto continuo</li>
+                        <li>Incremento del venduto di una unità</li>
+                        <li>Possibilità di specificare l'incremento (anche "0") con ":"</li>
+
+                </ul>
+                <h5 class="fragment fade-in"><br/>{POC time}</h5>
+        </section>
+        <section data-transition="convex">
+                <section>
+                  <h2>Modalità importazione/aggiornamento</h2>
+                  <p><pre><code>acquabooks-0.1.5$ ./bin/acquabooks -i foo.json</code></pre></p>
+                  <p>oppure</p>
+                  <p><pre><code>acquabooks-0.1.5$ ./bin/acquabooks -u foo.json</code></pre></p>
+                  <ul class="fragment fade-in">
+                          <li><span class="red">Importazione</span>: prende i libri censiti nel tracciato json e li indicizza. Se trova un libro già inserito lo <span class="red">skippa</span></li>
+                          <li><span class="yellow">Aggiornamento</span>: prende i libri censiti nel tracciato json e li indicizza. Se trova un libro già inserito lo <span class="yellow">aggiorna</span></li>
+
+                  </ul>
+                  <h5 class="fragment fade-in"><br/>{POC time}</h5>
+                </section>
+                <section>
+
+                        <h2>**zzo è un <i>tracciato json</i> ?</h2>
+                        <p>E' un documento di testo editabile da qualsiasi editor di testi (aka NotePad) che contiente gli oggetti "libro" (cos'è?) con le relative proprietà</p>
+                        <p><pre><code>[
+  {
+    "barcode": "9788897339229",
+    "titolo": "n. 4/2013 Animal Studies (Rivista). Gli animali di Foucault",
+    "autore": "AA.VV.",
+    "editore": "novalogos",
+    "tag": "macerono",
+    "prezzo": 4.0,
+    "percentuale": 0.25,
+    "qa": 1,
+    "qv": 1,
+    "sconto": 0.15
+  },
+  {
+    "barcode": "9788889987636",
+    "titolo": "Oggi e dopodomani",
+    "autore": "Ourednik, Patrik",
+    "editore": "duepunti",
+    "tag": "macerono",
+    "prezzo": 4.0,
+    "percentuale": 1.0,
+    "qa": 2,
+    "qv": 0,
+    "sconto": 0.0
+  },
+...
+  {
+    "barcode": "9788867991167",
+    "titolo": "Tigre di carta",
+    "autore": "Olivier Rolin",
+    "editore": "clichy",
+    "tag": "catalogo,contovendita",
+    "prezzo": 17.0,
+    "percentuale": 0.35,
+    "qa": 1,
+    "qv": 0,
+    "sconto": 0.0
+  }
+]</code></pre><</p>
+                </section>
+        </section>
+        <section data-transition="convex">
+                <h2>Modalità estrazione</h2>
+                 <p><pre><code>acquabooks-0.1.5$ ./bin/acquabooks -x T,json</code></pre></p>
+                 <p>"T" sta per tutti, lultimo paramento è il formato di esportazione json|excel</p>
+                 <p><pre><code>acquabooks-0.1.5$ ./bin/acquabooks -x E,eleuthera,excel</code></pre></p>
+                <p>"E" estrae per editore, secondo parametro, cercato in "tag" o "edtore"</p>
+             <p><pre><code>acquabooks-0.1.5$ ./bin/acquabooks -x VE,clichy,json</code></pre></p>
+                <p>"VE" come "E" ma estrae solo libri che hanno realizzato almeno una vendita</p>
+
+        </section>
+        <section data-transition="convex">
+                <section>
+                <h2>Modalità azzera venduto</h2>
+                 <p><pre><code>acquabooks-0.1.5$ ./bin/acquabooks -z foo.json</code></pre></p>
+         
+                <ul class="fragment fade-in">
+                        <li class="fragment fade-in">Nasce per trovare un modo gi gestire il post-regolazione conti con gli editori</li>
+                        <li class="fragment fade-in">E' una modaltà speciale di import  alimentato da  un tracciato json di cui interessano solo i "barcode"</li>
+                        <li class="fragment fade-in">Legge il libro indicizzato con il barcode dato e sottrae il "venduto" all'"arrivato"</li>
+                        <li class="fragment fade-in">azzera il venduto e re-indicizza il record letto</li>
+                </ul>
+                </section>
+                <section>
+                        <h2><span  class="red">### ALT ###</span></h2>
+                        <p>E' un'operazione delicata, si raccomanda il backup<span class="pedice">*</span> prima di eseguirla</p>
+                        <p class="left"><span class="pedice">*</span>:</p><pre><code>-x T,json</code></pre>
+                </section>
+        </section>
+        
+        <section data-transition="convex">
+                <h2>Altre mobilità</h2>
+         
+                <ul class="">
+                        <li>Modifica interattiva</li>
+                        <li>Modalità dettaglio</li>
+                </ul>
+                <h5><br/>Vedi l'help</h5>
+                <p><pre><code>acquabooks-0.1.5$ ./bin/acquabooks -h</code></pre></p>
+
+        </section>
+        <section data-transition="convex">
+                <section> 
+                  <h2>How to</h2>
+                  <p>Censimento nuovi libri arrivati da nuovo fornitore</p>
+                  <p><pre><code>acquabooks-0.1.5$ ./bin/acquabooks -i foo.json</code></pre></p>
+                  <p class="halfsize">(il tracciato va prparato a manella in genere a partire dall'excel con cui si prepara l'ordine)</p>
+                </section>
+                <section> 
+                  <p>Modifica di uno o piu dati di uno o più libri</p>
+                  <p><pre><code>acquabooks-0.1.5$ ./bin/acquabooks -x T,json</code></pre></p>
+                  <p class="halfsize">estraggo tutti i libri (valutare usare una estrazione più restrittiva) e modifico i dati eventualmente elimando i libri che non ci interessano</p>
+                  <p><pre><code>acquabooks-0.1.5$ ./bin/acquabooks -e T,foo.json</code></pre></p>
+                  <p class="halfsize">reimporto i dati in update</p>
+                </section>
+                <section> 
+                  <p>Rendicontazione dell'editore xxxx</p>
+                  <p><pre><code>acquabooks-0.1.5$ ./bin/acquabooks -x E,xxxx,excel</code></pre></p>
+                  <p class="halfsize">ed editare l'estratto con LibreOffice</p>
+                  <p><pre><code>acquabooks-0.1.5$ ./bin/acquabooks -z foo.json</code></pre></p>
+                  <p class="halfsize">dei libri di cui ho rendicontato e di cui è stato realizzato un venduto preparare una lista in json e azzerare il venduto</p>
+                </section>
+        </section>
+
+
+        <section data-transition="convex-in concave-out">
+                <h2><span class="greenthumb largo">!!! grazie !!!</span></h2>
+          <h3>..:: infos ::..</h3>
+          <p class="yellow">mario.incandenza@autistici.org</p>
+          <h3>..:: codice sorgente ::..</h3>
+          <p class="yellow">https://github.com/lucaconte/acquabooks/</p>
+        </section>
+
+
+      </div>
+
+    </div>
+
+    <script src="../../lib/js/head.min.js"></script>
+    <script src="../../js/reveal.js"></script>
+
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        //minScale: 1,
+        //maxScale: 10,
+        //naturalSwipe   : false,    // Invert swipe gestures
+        //pointerOpacity : 0.5,      // Set pointer opacity to 0.5
+        //pointerColor   : '#d80000', // Red pointer
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: '../../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); }},
+        // Syntax highlight for <code> elements
+        { src: '../../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        // Zoom in and out with Alt+click
+        { src: '../../plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } }
+          //{ src: '../../../plugin/leap/leap_motion.js', async: true  }
+        ]
+      });
+
+
+    </script>
+
+  </body>
+</html>
